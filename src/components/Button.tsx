@@ -6,7 +6,7 @@ const classes = cva(
   {
     variants: {
       variant: {
-        primary: "bg-white text-neutral-950 text-sm",
+        primary: "bg-white text-neutral-950 hover:bg-white/80",
         secondary:
           "bg-[rgba(255,255,255,0.05)] hover:bg-[rgba(255,255,255,0.07)]",
         ghost: "bg-transparent text-white hover:bg-[rgba(255,255,255,0.07)]",
