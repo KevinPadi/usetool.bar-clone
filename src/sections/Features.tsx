@@ -11,7 +11,7 @@ const Features = () => {
     <section className="flex flex-col px-6 items-center mt-[100px]">
       <div ref={ref}>
         <TextEffect
-          className="text-4xl font-medium tracking-tighter"
+          className="text-4xl font-medium tracking-tighter text-center"
           per="word"
           as="h3"
           preset="slide"
