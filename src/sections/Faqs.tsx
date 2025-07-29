@@ -2,6 +2,8 @@ import { AnimatePresence, motion, useInView } from "motion/react";
 import { useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { TextEffect } from "../components/TextEffect";
+import { Tilt } from "../components/Tilt";
+import { Triangle } from "lucide-react";
 
 const faqs = [
   {
@@ -103,6 +105,42 @@ const Faqs = () => {
             </AnimatePresence>
           </div>
         ))}
+      </div>
+      <div className="relative aspect-video w-[260px] h-[54px] mx-auto mt-10 hover:scale-110 transition ease-in-out duration-400 mb-10">
+        <Tilt
+          rotationFactor={20}
+          isRevese
+          style={{
+            transformOrigin: "center center",
+          }}
+          springOptions={{
+            stiffness: 26.7,
+            damping: 4.1,
+            mass: 0.2,
+          }}
+          className="group relative rounded-lg"
+        >
+          {/* aca va todo */}
+          <div className="bg-yellow-400 hover:brightness-105 shadow-lg rounded-xl h-[54px] p-2 flex items-center justify-between text-yellow-950">
+            <div className="flex items-center">
+              <img
+                src="/src/assets/images/laurel-leaves.svg"
+                alt="Laurel leaves"
+                className="size-12"
+              />
+              <div className="flex flex-col -space-y-1">
+                <span className="text-[10px] font-bold uppercase">
+                  Featured on
+                </span>
+                <span className="font-bold">Product Hunt</span>
+              </div>
+            </div>
+            <div className="flex flex-col items-center">
+              <Triangle className="fill-current size-3" />
+              <span className="text-xs font-bold">159</span>
+            </div>
+          </div>
+        </Tilt>
       </div>
     </section>
   );
