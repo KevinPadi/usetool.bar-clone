@@ -23,7 +23,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="mt-10 sm:mt-19 px-6">
+    <section className="mt-10 sm:mt-40 px-6">
       <div className="text-center flex flex-col items-center gap-6">
         <div>
           <h1 className="text-white text-4xl md:text-[55px] font-medium border border-white/15 sm:w-[500px] tracking-tighter leading-tight px-5 md:p-0 sm:text-balance">
