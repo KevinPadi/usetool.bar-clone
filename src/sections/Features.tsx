@@ -29,7 +29,7 @@ const Features = () => {
           <img
             src="/src/assets/images/instant-issue-reporter.webp"
             alt="Instant issue reporting"
-            className="size-full absolute top-0 right-0 object-cover"
+            className="size-full absolute  object-cover object-center"
           />
         </FeatureCard>
         <FeatureCard
@@ -39,7 +39,7 @@ const Features = () => {
           <img
             src="/src/assets/images/collaborate-without-barriers.webp"
             alt="Collaborate without barriers"
-            className="size-full absolute top-0 left-0 object-cover"
+            className="size-full object-cover absolute -left-1/2 translate-x-1/3 top-14 sm:left-auto sm:translate-x-0 sm:right-0"
           />
         </FeatureCard>
         <FeatureCard
@@ -49,7 +49,7 @@ const Features = () => {
           <img
             src="/src/assets/images/effortless-task-management.webp"
             alt="Effortless task management"
-            className=" absolute top-0 right-0 object-cover"
+            className="absolute top-0 right-0 object-cover"
           />
         </FeatureCard>
         <FeatureCard
