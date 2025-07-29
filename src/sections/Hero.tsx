@@ -1,5 +1,6 @@
 import { Star, AppWindow, MessageCirclePlus, Link } from "lucide-react";
 import Button from "../components/Button";
+import { motion } from "motion/react";
 
 const Hero = () => {
   const Features = [
@@ -22,11 +23,93 @@ const Hero = () => {
     },
   ];
 
+  const boxesVariants = {
+    hidden: { opacity: 0, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 1 },
+    },
+  };
+
+  const lineTextVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
   return (
-    <section className="mt-10 sm:mt-40 px-6">
+    <section className="mt-40 px-6">
       <div className="text-center flex flex-col items-center gap-6">
-        <div>
-          <h1 className="text-white text-4xl md:text-[55px] font-medium border border-white/15 sm:w-[500px] tracking-tighter leading-tight px-5 md:p-0 sm:text-balance">
+        <div className="border border-white/15 relative">
+          {/* Corner squares */}
+          <motion.div
+            variants={boxesVariants}
+            initial="hidden"
+            animate="visible"
+            className="size-1.5 border border-white/10 bg-neutral-900 absolute top-0 left-0 -translate-x-[95%] -translate-y-[105%]"
+          />
+          <motion.div
+            variants={boxesVariants}
+            initial="hidden"
+            animate="visible"
+            className="size-1.5 border border-white/10 bg-neutral-900 absolute top-0 right-0 translate-x-[105%] -translate-y-[105%]"
+          />
+          <motion.div
+            variants={boxesVariants}
+            initial="hidden"
+            animate="visible"
+            className="size-1.5 border border-white/10 bg-neutral-900 absolute bottom-0 left-0 -translate-x-[95%] translate-y-[105%]"
+          />
+          <motion.div
+            variants={boxesVariants}
+            initial="hidden"
+            animate="visible"
+            className="size-1.5 border border-white/10 bg-neutral-900 absolute bottom-0 right-0 translate-x-[105%] translate-y-[105%]"
+          />
+
+          <motion.div
+            initial={{ opacity: 0, y: "-50%" }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.3, delay: 0.4 },
+            }}
+            className="w-px h-screen border border-dashed border-white/10 absolute top-0 left-1/2 -translate-y-full -translate-x-1/2 "
+          />
+          <motion.span
+            variants={lineTextVariants}
+            initial="hidden"
+            animate="visible"
+            className="block text-white/60 absolute -top-1/2 -translate-y-full left-1/2 text-[10px] pl-2"
+          >
+            275px
+          </motion.span>
+
+          <motion.div
+            initial={{ opacity: 0, x: "-50%" }}
+            animate={{
+              opacity: 1,
+              x: 0,
+              transition: { duration: 0.3, delay: 0.4 },
+            }}
+            className="hidden md:block w-screen hh-px border border-dashed border-white/10 absolute top-1/2 left-0 -translate-y-1/2 -translate-x-full "
+          />
+          <motion.span
+            variants={lineTextVariants}
+            initial="hidden"
+            animate="visible"
+            className="hidden md:block text-white/60 absolute -left-1/2 -translate-y-full top-1/2 text-[10px] pb-2"
+          >
+            675px
+          </motion.span>
+
+          <h1 className="text-white text-4xl md:text-[55px] font-medium sm:w-[500px] tracking-tighter leading-tight px-5 md:p-0 sm:text-balance ">
             Stop Printscreening Your Product Bugs
           </h1>
         </div>
