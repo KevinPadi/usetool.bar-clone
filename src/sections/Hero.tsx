@@ -1,24 +1,22 @@
-import { Star, AppWindow, MessageCirclePlus, Link } from "lucide-react";
+import { Star } from "lucide-react";
 import Button from "../components/Button";
 import { motion } from "motion/react";
+import window from "../assets/window.svg";
+import messages from "../assets/messages.svg";
+import link from "../assets/link.svg";
 
 const Hero = () => {
   const Features = [
     {
-      icon: <AppWindow size={30} />,
+      icon: window,
       text: "Leave comments directly on your website—no emails, no confusion, just instant collaboration.",
     },
     {
-      icon: (
-        <MessageCirclePlus
-          size={30}
-          className="fill-neutral-500 stroke-neutral-900"
-        />
-      ),
+      icon: messages,
       text: "Track bugs with precision—get all details like viewport, device, and browser info.",
     },
     {
-      icon: <Link size={30} />,
+      icon: link,
       text: "Generate shareable links to guide your team or clients straight to the exact issue on the page.",
     },
   ];
