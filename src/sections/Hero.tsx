@@ -1,22 +1,19 @@
 import { Star } from "lucide-react";
 import Button from "../components/Button";
 import { motion } from "motion/react";
-import window from "../assets/window.svg";
-import messages from "../assets/messages.svg";
-import link from "../assets/link.svg";
 
 const Hero = () => {
   const Features = [
     {
-      icon: window,
+      icon: "/src/assets/window.svg",
       text: "Leave comments directly on your website—no emails, no confusion, just instant collaboration.",
     },
     {
-      icon: messages,
+      icon: "/src/assets/messages.svg",
       text: "Track bugs with precision—get all details like viewport, device, and browser info.",
     },
     {
-      icon: link,
+      icon: "/src/assets/link.svg",
       text: "Generate shareable links to guide your team or clients straight to the exact issue on the page.",
     },
   ];
@@ -153,7 +150,7 @@ const Hero = () => {
                 key={index}
                 className="flex flex-col items-center gap-3 text-white/65 text-sm mb-4 w-60 shrink-0 snap-start max-w-[230px]"
               >
-                <span className="text-neutral-500">{feature.icon}</span>
+                <img src={feature.icon} alt="" />
                 <p className="font-medium text-sm">{feature.text}</p>
               </div>
             ))}
