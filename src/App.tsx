@@ -1,3 +1,4 @@
+import DragContainer from "./components/DragContainer";
 import Faqs from "./sections/Faqs";
 import Features from "./sections/Features";
 import Footer from "./sections/Footer";
@@ -7,14 +8,15 @@ import Reviews from "./sections/Reviews";
 
 function App() {
   return (
-    <>
+    <div className="relative">
       <Navbar />
       <Hero />
       <Features />
       <Reviews />
       <Faqs />
       <Footer />
-    </>
+      <DragContainer />
+    </div>
   );
 }
 

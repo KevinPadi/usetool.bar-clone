@@ -7,7 +7,7 @@ const Navbar = () => {
     <motion.section
       initial={{ opacity: 0, y: " -100%" }}
       animate={{ opacity: 1, y: 0, transition: { duration: 0.3, delay: 0.4 } }}
-      className="fixed z-50 top-0 w-full grid grid-cols-1 sm:grid-cols-3 gap-4 py-7 px-8 "
+      className="fixed z-20 top-0 w-full grid grid-cols-1 sm:grid-cols-3 gap-4 py-7 px-8 "
     >
       <div className="hidden sm:block"></div>
       <div className="place-self-center">
