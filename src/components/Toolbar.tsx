@@ -2,6 +2,8 @@ import { CommandIcon } from "lucide-react";
 import CommandButton from "./CommandButton";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { motion, type LegacyAnimationControls } from "motion/react";
+import { MenuDialog } from "./MenuDialog";
+import { useEffect, useState } from "react";
 
 type toolbarPropsType = {
   ref: React.RefObject<HTMLDivElement | null>;
@@ -18,6 +20,24 @@ const Toolbar = ({
   animate,
   position,
 }: toolbarPropsType) => {
+  const [openDialog, setOpenDialog] = useState(false);
+
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (window.innerWidth < 1024) return;
+      if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        setOpenDialog((openDialog) => !openDialog);
+      }
+    };
+
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
+  }, []);
+
+  useEffect(() => {
+    console.log(openDialog);
+  }, [openDialog]);
   return (
     <motion.div
       ref={ref}
@@ -36,7 +56,7 @@ const Toolbar = ({
       >
         <Tooltip>
           <TooltipTrigger>
-            <button className="fill-neutral-100 flex items-center justify-center w-[47px] h-[37px] hover:bg-neutral-600/20 transition duration-300 rounded-[15px] hover:cursor-pointer">
+            <button className="fill-neutral-100 flex items-center justify-center w-[47px] h-[37px] hover:bg-neutral-600/30 transition duration-300 rounded-[15px] hover:cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="22"
@@ -52,7 +72,7 @@ const Toolbar = ({
             </button>
           </TooltipTrigger>
           <TooltipContent>
-            <p className="flex gap-1 items-center justify-center">
+            <p className="flex gap-1 items-center justify-center text-neutral-300">
               Comment
               <CommandButton content="C" />
             </p>
@@ -60,7 +80,7 @@ const Toolbar = ({
         </Tooltip>
         <Tooltip>
           <TooltipTrigger asChild>
-            <button className="fill-neutral-100 flex items-center justify-center w-[47px] h-[37px] hover:bg-neutral-600/20 rounded-[15px] transition duration-300 hover:cursor-pointer">
+            <button className="fill-neutral-100 flex items-center justify-center w-[47px] h-[37px] hover:bg-neutral-600/30 rounded-[15px] transition duration-300 hover:cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -76,7 +96,7 @@ const Toolbar = ({
             </button>
           </TooltipTrigger>
           <TooltipContent>
-            <p className="flex gap-1 items-center justify-center">
+            <p className="flex gap-1 items-center justify-center text-neutral-300">
               Inbox
               <CommandButton content="I" />
             </p>
@@ -86,7 +106,10 @@ const Toolbar = ({
       <div className="flex items-center justify-center w-fit gap-px border-[0.5px] border-white/30 p-0.5 rounded-[18px] bg-[#1d1d1dcc] backdrop-blur-[5px]">
         <Tooltip>
           <TooltipTrigger asChild>
-            <button className="fill-neutral-100 flex items-center justify-center w-[47px] h-[37px] hover:bg-neutral-600/0 transition duration-300 rounded-[15px] hover:cursor-pointer">
+            <button
+              onClick={() => setOpenDialog(!openDialog)}
+              className="fill-neutral-100 flex items-center justify-center w-[47px] h-[37px] hover:bg-neutral-600/30 transition duration-300 rounded-[15px] hover:cursor-pointer"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="23"
@@ -105,12 +128,13 @@ const Toolbar = ({
             </button>
           </TooltipTrigger>
           <TooltipContent>
-            <p className="flex gap-1 items-center justify-center">
+            <p className="flex gap-1 items-center justify-center text-neutral-300">
               Menu
               <CommandButton content={<CommandIcon size={12} />} />
-              <CommandButton content="K" />
+              <CommandButton content="J" />
             </p>
           </TooltipContent>
+          <MenuDialog open={openDialog} setOpen={setOpenDialog} />
         </Tooltip>
       </div>
     </motion.div>
