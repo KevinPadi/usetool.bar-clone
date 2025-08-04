@@ -39,7 +39,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="mt-40 px-6">
+    <section className="pt-40 px-6">
       <div className="text-center flex flex-col items-center gap-6">
         <div className="border border-white/15 relative">
           {/* Corner squares */}

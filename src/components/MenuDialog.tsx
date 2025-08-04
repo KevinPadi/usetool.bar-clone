@@ -15,6 +15,7 @@ import {
   CommandList,
   CommandShortcut,
 } from "@/components/ui/command";
+import { useBearStore } from "@/hooks/global-state";
 
 export function MenuDialog({
   open,
@@ -23,12 +24,18 @@ export function MenuDialog({
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
+  const setCursorActive = useBearStore((s) => s.setCursorActive);
+
+  const handleComment = () => {
+    setOpen(false);
+    setCursorActive();
+  };
   return (
     <>
       <CommandDialog
         open={open}
         onOpenChange={setOpen}
-        className="bg-transparent border-2 border-white/30 rounded-3xl"
+        className="bg-transparent border-2 border-white/30 rounded-3xl pointer-events-auto"
       >
         <div className="p-2">
           <CommandInput placeholder="Search..." />
@@ -36,7 +43,7 @@ export function MenuDialog({
         <CommandList>
           <CommandEmpty>No results</CommandEmpty>
           <CommandGroup>
-            <CommandItem>
+            <CommandItem onSelect={handleComment}>
               <MessageCircle />
               <span>Comment</span>
               <CommandShortcut>C</CommandShortcut>

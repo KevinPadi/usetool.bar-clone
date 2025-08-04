@@ -4,6 +4,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { motion, type LegacyAnimationControls } from "motion/react";
 import { MenuDialog } from "./MenuDialog";
 import { useEffect, useState } from "react";
+import { useBearStore } from "@/hooks/global-state";
 
 type toolbarPropsType = {
   ref: React.RefObject<HTMLDivElement | null>;
@@ -21,6 +22,8 @@ const Toolbar = ({
   position,
 }: toolbarPropsType) => {
   const [openDialog, setOpenDialog] = useState(false);
+  const isCursorActive = useBearStore((state) => state.isCursorActive);
+  const switchCursror = useBearStore((state) => state.setCursorActive);
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -35,9 +38,6 @@ const Toolbar = ({
     return () => document.removeEventListener("keydown", down);
   }, []);
 
-  useEffect(() => {
-    console.log(openDialog);
-  }, [openDialog]);
   return (
     <motion.div
       ref={ref}
@@ -56,7 +56,12 @@ const Toolbar = ({
       >
         <Tooltip>
           <TooltipTrigger>
-            <button className="fill-neutral-100 flex items-center justify-center w-[47px] h-[37px] hover:bg-neutral-600/30 transition duration-300 rounded-[15px] hover:cursor-pointer">
+            <button
+              onClick={switchCursror}
+              className={`${
+                isCursorActive ? "bg-neutral-700" : "bg-transparent"
+              } fill-neutral-100 flex items-center justify-center w-[47px] h-[37px] hover:bg-neutral-600/30 transition duration-300 rounded-[15px] hover:cursor-pointer`}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="22"
