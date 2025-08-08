@@ -11,11 +11,13 @@ import Hero from "./sections/Hero";
 import Navbar from "./sections/Navbar";
 import Reviews from "./sections/Reviews";
 import CommentBubble from "./components/CommentBubble";
+import InboxContainer from "./components/InboxContainer";
 
 function App() {
   const comments = useBearStore((state) => state.comments);
   const isCursorLocked = useBearStore((s) => s.isCursorLock);
   const switchCursor = useBearStore((state) => state.setCursorActive);
+  const isInboxOpen = useBearStore((s) => s.isInboxOpen);
   const constrainsRef = useRef(null);
 
   useEffect(() => {
@@ -40,6 +42,7 @@ function App() {
 
   return (
     <CursorProvider>
+      {isInboxOpen && <InboxContainer />}
       <div ref={constrainsRef} className="relative">
         <Navbar />
         <Hero />

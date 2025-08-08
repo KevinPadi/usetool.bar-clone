@@ -23,7 +23,9 @@ const Toolbar = ({
 }: toolbarPropsType) => {
   const [openDialog, setOpenDialog] = useState(false);
   const isCursorActive = useBearStore((state) => state.isCursorActive);
-  const switchCursror = useBearStore((state) => state.setCursorActive);
+  const switchCursor = useBearStore((state) => state.setCursorActive);
+  const openInbox = useBearStore((s) => s.setIsInboxOpen);
+  const setOpenInbox = useBearStore((s) => s.setIsInboxOpen);
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -31,6 +33,9 @@ const Toolbar = ({
       if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         setOpenDialog((openDialog) => !openDialog);
+      } else if (e.key === "i") {
+        e.preventDefault();
+        setOpenInbox();
       }
     };
 
@@ -57,7 +62,7 @@ const Toolbar = ({
         <Tooltip>
           <TooltipTrigger>
             <button
-              onClick={switchCursror}
+              onClick={switchCursor}
               className={`${
                 isCursorActive ? "bg-neutral-700" : "bg-transparent"
               } fill-neutral-100 flex items-center justify-center w-[47px] h-[37px] hover:bg-neutral-600/30 transition duration-300 rounded-[15px] hover:cursor-pointer`}
@@ -85,7 +90,10 @@ const Toolbar = ({
         </Tooltip>
         <Tooltip>
           <TooltipTrigger asChild>
-            <button className="fill-neutral-100 flex items-center justify-center w-[47px] h-[37px] hover:bg-neutral-600/30 rounded-[15px] transition duration-300 hover:cursor-pointer">
+            <button
+              onClick={() => openInbox()}
+              className="fill-neutral-100 flex items-center justify-center w-[47px] h-[37px] hover:bg-neutral-600/30 rounded-[15px] transition duration-300 hover:cursor-pointer"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

@@ -152,9 +152,11 @@ const defaultData = {
 
 interface BearState {
   isCursorActive: boolean;
+  isInboxOpen: boolean;
   isCursorLock: boolean;
   comments: Comment[];
   setCursorActive: () => void;
+  setIsInboxOpen: (value?: boolean) => void;
   setCursorLock: (value?: boolean) => void;
   addNewComment: (comment: Comment) => void;
   updateComment: (id: string, updated: Partial<Comment>) => void;
@@ -169,10 +171,13 @@ interface BearState {
 
 export const useBearStore = create<BearState>()((set) => ({
   isCursorActive: false,
+  isInboxOpen: false,
   isCursorLock: false,
   comments: defaultData.comments,
   setCursorActive: () =>
     set((state) => ({ isCursorActive: !state.isCursorActive })),
+  setIsInboxOpen: (value?: boolean) =>
+    set((s) => ({ isInboxOpen: value ? value : !s.isInboxOpen })),
   setCursorLock: (value?: boolean) =>
     set((state) => ({ isCursorLock: value ? value : !state.isCursorLock })),
   addNewComment: (comment: Comment) =>
