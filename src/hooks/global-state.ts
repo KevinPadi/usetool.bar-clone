@@ -50,7 +50,7 @@ const defaultData = {
         hardwareConcurrency: 8,
       },
       nodeId: "html",
-      x: 1344,
+      x: 1044,
       y: 197,
       relativeX: 0.7859649122807018,
       relativeY: 0,
