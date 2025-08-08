@@ -1,5 +1,3 @@
-"use client";
-
 import {
   useBearStore,
   type Comment,
@@ -140,7 +138,7 @@ const CommentBubble = ({
         </div>
         <div className="-ml-[18px] size-[34px] flex items-center justify-center p-px rounded-full">
           <img
-            src="/src/assets/images/user_profile_image.webp"
+            src="/images/user_profile_image.webp"
             alt="User profile image"
             className="border-[0.5px] border-[#ffffff59] size-full rounded-full pointer-events-none"
           />
@@ -159,7 +157,7 @@ const CommentBubble = ({
                   <div className="flex justify-between items-center mb-2">
                     <div className="flex items-center gap-1 font-normal">
                       <img
-                        src="/src/assets/images/user_profile_image.webp"
+                        src="/images/user_profile_image.webp"
                         alt="User profile"
                         className="size-6 rounded-full p-px bg-[#ffffff26]"
                       />
@@ -261,7 +259,7 @@ const CommentBubble = ({
                         <div key={reply.id} className="mb-2 last:mb-0">
                           <div className="flex gap-1 items-center">
                             <img
-                              src="/src/assets/images/user_profile_image.webp"
+                              src="/images/user_profile_image.webp"
                               alt="User profile image"
                               className="size-[22px] rounded-full border-0.5 border-white/55"
                             />

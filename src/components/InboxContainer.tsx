@@ -123,7 +123,7 @@ export default function InboxContainer() {
   };
 
   return (
-    <div className="fixed top-0 right-0 min-h-screen w-full flex flex-col p-4 text-white z-50 pointer-events-none">
+    <div className="fixed top-0 right-0 min-h-screen w-full flex flex-col p-4 text-white bg-black/30 z-50">
       <div className="flex-1 w-full flex">
         {/* Caja de Destino 1 */}
         <div ref={box1Ref} className="flex flex-1"></div>

@@ -27,7 +27,7 @@ const Features = () => {
           description="Capture bugs with one click, including device details, and user context-saving 3x the time compared to traditional methods."
         >
           <img
-            src="/src/assets/images/instant-issue-reporter.webp"
+            src="/images/instant-issue-reporter.webp"
             alt="Instant issue reporting"
             className="size-full absolute  object-cover object-center"
           />
@@ -37,7 +37,7 @@ const Features = () => {
           description="Bring developers, clients, and stakeholders together to comment, suggest changes, and track updates-all in one place."
         >
           <img
-            src="/src/assets/images/collaborate-without-barriers.webp"
+            src="/images/collaborate-without-barriers.webp"
             alt="Collaborate without barriers"
             className="size-full object-cover absolute -left-1/2 translate-x-1/3 top-14 sm:left-auto sm:translate-x-0 sm:right-0"
           />
@@ -47,7 +47,7 @@ const Features = () => {
           description="Create pre-filled tasks, cutting 70% of manual work - integration with Jira, Slack & more."
         >
           <img
-            src="/src/assets/images/effortless-task-management.webp"
+            src="/images/effortless-task-management.webp"
             alt="Effortless task management"
             className="absolute top-0 right-0 object-cover"
           />
@@ -57,7 +57,7 @@ const Features = () => {
           description="Our AI can now solve tasks for you. It has full context, sees the page, and can offer you solutions."
         >
           <img
-            src="/src/assets/images/resolve-tasks-with-ai.svg"
+            src="/images/resolve-tasks-with-ai.svg"
             alt="Resolve tasks with AI"
             className="size-[186px] absolute left-1/2 -translate-x-1/2 top-14 sm:left-auto sm:right-36 sm:translate-x-0 mx-auto"
           />
@@ -67,7 +67,7 @@ const Features = () => {
           description="Connect Toolbar with Zapier, Make.com, Linear, Jira, and more to keep your workflows smooth."
         >
           <img
-            src="/src/assets/images/integrations.svg"
+            src="/images/integrations.svg"
             alt="Integrations"
             className="absolute top-0 right-0"
           />
@@ -77,7 +77,7 @@ const Features = () => {
           description="Capture and report issues even faster with our upcoming browser extension."
         >
           <img
-            src="/src/assets/images/browser-extension.webp"
+            src="/images/browser-extension.webp"
             alt="Browser extension"
             className="absolute top-0 right-0"
           />

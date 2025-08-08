@@ -5,7 +5,7 @@ import ReviewCard from "../components/ReviewCard";
 
 const reviews = [
   {
-    avatar: "/src/assets/images/denis-bradu.jpg",
+    avatar: "/images/denis-bradu.jpg",
     alt: "Denis Bradu avatar",
     name: "Denis Bradu",
     role: "Founded Fintaxy",
@@ -15,7 +15,7 @@ integrating changes and incorporating client feedback, as well as
 improving internal collaboration within our team.`,
   },
   {
-    avatar: "/src/assets/images/bogdan.avif",
+    avatar: "/images/bogdan.avif",
     alt: "Bogdan avatar",
     name: "Bogdan",
     role: "CEO at Decebal",
@@ -23,7 +23,7 @@ improving internal collaboration within our team.`,
 application.`,
   },
   {
-    avatar: "/src/assets/images/dorian-lesnic.jpg",
+    avatar: "/images/dorian-lesnic.jpg",
     alt: "Dorian Lesnic avatar",
     name: "Dorian Lesnic",
     role: "CEO at CardNeto",

@@ -124,7 +124,7 @@ const Faqs = () => {
           <div className="bg-yellow-400 hover:brightness-105 shadow-lg rounded-xl h-[54px] p-2 flex items-center justify-between text-yellow-950">
             <div className="flex items-center">
               <img
-                src="/src/assets/images/laurel-leaves.svg"
+                src="/images/laurel-leaves.svg"
                 alt="Laurel leaves"
                 className="size-12"
               />

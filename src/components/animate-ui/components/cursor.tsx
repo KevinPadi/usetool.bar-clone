@@ -299,7 +299,7 @@ function CursorFollow({
               >
                 <div className="size-[34px] flex items-center justify-center p-px rounded-full">
                   <img
-                    src="/src/assets/images/user_profile_image.webp"
+                    src="/images/user_profile_image.webp"
                     alt="User profile image"
                     className="border-[0.5px] border-[#ffffff59] size-full rounded-full"
                   />

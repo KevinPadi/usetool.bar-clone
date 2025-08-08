@@ -5,15 +5,15 @@ import { motion } from "motion/react";
 const Hero = () => {
   const Features = [
     {
-      icon: "/src/assets/window.svg",
+      icon: "/icons/window.svg",
       text: "Leave comments directly on your website—no emails, no confusion, just instant collaboration.",
     },
     {
-      icon: "/src/assets/messages.svg",
+      icon: "/icons/messages.svg",
       text: "Track bugs with precision—get all details like viewport, device, and browser info.",
     },
     {
-      icon: "/src/assets/link.svg",
+      icon: "/icons/link.svg",
       text: "Generate shareable links to guide your team or clients straight to the exact issue on the page.",
     },
   ];

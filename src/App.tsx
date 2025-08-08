@@ -43,7 +43,7 @@ function App() {
   return (
     <CursorProvider>
       {isInboxOpen && <InboxContainer />}
-      <div ref={constrainsRef} className="relative">
+      <div ref={constrainsRef} className="relative ">
         <Navbar />
         <Hero />
         <Features />
