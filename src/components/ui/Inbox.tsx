@@ -76,7 +76,7 @@ const CommentItem = ({
       <div className="flex items-center gap-1.5 text-[13px]">
         <img
           className="size-[22px] rounded-full border-[0.5px] border-white/15"
-          src="/src/assets/images/user_profile_image.webp"
+          src="/images/user_profile_image.webp"
           alt="User profile"
         />
         <span>{comment.author || "User"}</span>
@@ -293,7 +293,7 @@ const Inbox: React.FC<InboxProps> = ({
               <div className="flex items-center gap-1.5 text-[13px]">
                 <img
                   className="size-[22px] rounded-full border-[0.5px] border-white/15"
-                  src="/src/assets/images/user_profile_image.webp"
+                  src="/images/user_profile_image.webp"
                   alt="User profile"
                 />
                 <span>{activeComment.author || "User"}</span>
