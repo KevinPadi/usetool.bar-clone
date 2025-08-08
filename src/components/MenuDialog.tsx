@@ -25,10 +25,16 @@ export function MenuDialog({
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const setCursorActive = useBearStore((s) => s.setCursorActive);
+  const setInboxActive = useBearStore((s) => s.setIsInboxOpen);
 
   const handleComment = () => {
     setOpen(false);
     setCursorActive();
+  };
+
+  const handleInbox = () => {
+    setOpen(false);
+    setInboxActive();
   };
   return (
     <>
@@ -48,7 +54,7 @@ export function MenuDialog({
               <span>Comment</span>
               <CommandShortcut>C</CommandShortcut>
             </CommandItem>
-            <CommandItem>
+            <CommandItem onSelect={handleInbox}>
               <InboxIcon />
               <span>Show Inbox</span>
               <CommandShortcut>I</CommandShortcut>
